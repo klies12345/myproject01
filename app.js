@@ -58,6 +58,6 @@ app.get("/contact", (req, res) => {
 
  var port = process.env.PORT || 3000;
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server Started");
 });
