@@ -4,8 +4,8 @@ var hsb = require ("hbs");
 var app = express();
 
 app.use((req, res, next) => {
-    res.send("Mohon Maaf Sedang Maintenance");
-    //next();
+    //res.send("Mohon Maaf Sedang Maintenance");
+    next();
 });
 
 app.use(express.static(__dirname + "/public")); // use middleware
@@ -53,6 +53,11 @@ app.get("/contact", (req, res) => {
 
  });
  
+ // process.env.PORT
+ // untuk upload ke Heroku
+
+ var port = process.env.PORT || 3000;
+
 app.listen(3000, () => {
     console.log("Server Started");
 });
